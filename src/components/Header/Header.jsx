@@ -1,20 +1,59 @@
 /** @jsx jsx */
-import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap'
+import React, { Fragment, useState } from 'react';
 import { css, jsx } from '@emotion/core'
+import { Nav, Navbar } from 'react-bootstrap'
 import Media from 'react-media'
 
+import Burger from '@animated-burgers/burger-arrow'
+import '@animated-burgers/burger-arrow/dist/styles.css'
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const headerTags = [ 'My Projects', 'Photography', 'About Me', 'Contact']
+
+  const toggleOpen = event => {
+    event.persist()
+    setIsOpen(!isOpen)
+  }
+
+  const setProp = key => {
+    return key === true ? 'open' : 'closed'
+  }
 
   return (
     <div css={headerCSS}>
-      <h1>R|B</h1>
-      <div css={tagCSS}>
-        {headerTags.map(tag => {
-          return <p key={tag}>{tag}</p>
-        })}
-      </div>
+      <Media queries={{
+          mobile: "(max-width: 500px)",
+          large: "(min-width: 501px)"
+      }}>
+
+      {matches => (
+        <Fragment>
+          <h1>R|B</h1>
+
+          {/* Mobile View */}
+          {matches.mobile &&
+            <div>
+              <Burger direction='up' isOpen={isOpen} onClick={toggleOpen} />
+              <div id={setProp(isOpen)} className='mobileCSS'>
+                {headerTags.map(tag => {
+                  return <p key={tag}>{tag}</p>
+                })}
+              </div>
+            </div>
+          }
+
+          {/* Tablet/Desktop View */}
+          {matches.large &&
+            <div>
+              {headerTags.map(tag => {
+                return <p key={tag}>{tag}</p>
+              })}
+            </div>
+          }
+        </Fragment>
+      )}
+      </Media>
     </div>
   )
 }
@@ -28,26 +67,49 @@ const headerCSS = css`
   color: #fff;
   display: flex;
   flex-direction: row;
-  height: 7vh;
+  height: 8vh;
 
   h1 {
-    border: 1px solid red;
     font-family: 'IBM Plex Mono';
     font-size: 2.5rem;
+    margin: 0;
   }
 
-  p {
-    color: #fff;
-    font-family: 'Montserrat';
-    margin: 0 1rem;
-    text-decoration: none;
-  }
-`
+  div {
+    display: flex;
 
-const tagCSS = css`
-  display: flex;
-  flex-direction: row;
-  p:link {
-    text-decoration: none;
+    p {
+      color: #fff;
+      font-family: 'Montserrat';
+      margin: 0 1rem;
+      padding: .5rem;
+      text-decoration: none;
+    }
+  }
+
+  .mobileCSS {
+    background: #212529;
+    flex-direction: column;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    top: 8vh;
+    transition: transform .7s
+              cubic-bezier(0, .52, 0, 1);
+    z-index: -1;
+
+    p {
+      text-align: left;
+      text-indent: 10vw;
+      width: 40vw;
+    }
+  }
+
+  #closed {
+    transform: translateY(-142px)
+  }
+
+  #open {
+    transform: translateY(0px)
   }
 `

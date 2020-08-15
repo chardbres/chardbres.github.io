@@ -26,6 +26,10 @@ module.exports = {
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   testURL: 'http://localhost',
 
+  moduleNameMapper: {
+    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+  },
+
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
