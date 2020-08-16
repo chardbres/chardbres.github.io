@@ -27,7 +27,7 @@ module.exports = {
   testURL: 'http://localhost',
 
   moduleNameMapper: {
-    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    "\\.(css|scss|jpg)$": "<rootDir>/__mocks__/styleMock.js"
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

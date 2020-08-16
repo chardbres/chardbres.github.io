@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
 import { css, jsx } from '@emotion/core'
-import { Nav, Navbar } from 'react-bootstrap'
 import Media from 'react-media'
 
 import Burger from '@animated-burgers/burger-arrow'
@@ -9,7 +8,7 @@ import '@animated-burgers/burger-arrow/dist/styles.css'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const headerTags = [ 'My Projects', 'Photography', 'About Me', 'Contact']
+  const headerTags = [ 'Projects', 'Photography', 'Writing', 'About Me', 'Contact']
 
   const toggleOpen = event => {
     event.persist()
@@ -22,6 +21,7 @@ const Header = () => {
 
   return (
     <div css={headerCSS}>
+
       <Media queries={{
           mobile: "(max-width: 500px)",
           large: "(min-width: 501px)"
@@ -34,7 +34,7 @@ const Header = () => {
           {/* Mobile View */}
           {matches.mobile &&
             <div>
-              <Burger direction='up' isOpen={isOpen} onClick={toggleOpen} />
+              <Burger direction='up' isOpen={isOpen} onClick={toggleOpen} style={{'font-size': '10px'}}/>
               <div id={setProp(isOpen)} className='mobileCSS'>
                 {headerTags.map(tag => {
                   return <p key={tag}>{tag}</p>
@@ -60,14 +60,17 @@ const Header = () => {
 
 export default Header
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 const headerCSS = css`
   align-items: center;
   justify-content: space-around;
   background: #212529;
   color: #fff;
   display: flex;
+  height: 9vh;
   flex-direction: row;
-  height: 8vh;
+  z-index: 5;
 
   h1 {
     font-family: 'IBM Plex Mono';
@@ -90,23 +93,24 @@ const headerCSS = css`
   .mobileCSS {
     background: #212529;
     flex-direction: column;
-    left: 0;
+    height: 190px;
+    left: 0; top: 8vh;
+    justify-content: center;
     position: fixed;
     width: 100vw;
-    top: 8vh;
     transition: transform .7s
               cubic-bezier(0, .52, 0, 1);
     z-index: -1;
 
     p {
       text-align: left;
-      text-indent: 10vw;
+      text-indent: 5vw;
       width: 40vw;
     }
   }
 
   #closed {
-    transform: translateY(-142px)
+    transform: translateY(-190px)
   }
 
   #open {
