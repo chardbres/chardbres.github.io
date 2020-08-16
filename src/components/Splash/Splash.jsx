@@ -16,18 +16,21 @@ const Splash = () => {
 
     {matches => (
       <Fragment>
+        {/* Mobile View */}
         {matches.mobile &&
           <div css={mobileImg}>
             <img src={splashImg} alt='Beached Lobster Pot' />
           </div>
         }
 
+        {/* Tablet View */}
         {matches.mid &&
           <div css={midImg}>
             <img src={splashImg} alt='Beached Lobster Pot' />
           </div>
         }
 
+        {/* Desktop View */}
         {matches.large &&
           <div css={desktopImg}>
             <img src={splashImg} alt='Beached Lobster Pot' />
@@ -72,7 +75,10 @@ const desktopImg = css`
   display: flex;
   height: 80vh;
   justify-content: center;
+  position: fixed;
   width: 100%;
+  top: 10vh;
+  z-index: 1;
 
   img {
     position: relative;

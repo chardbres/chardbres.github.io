@@ -7,7 +7,7 @@ import WebFont from 'webfontloader'
 
 WebFont.load({
   google: {
-    families: [ 'IBM Plex Mono', 'Montserrat' ],
+    families: [ 'IBM Plex Mono', 'Montserrat:300,400,700', 'Libre Caslon Display' ],
   }
 })
 

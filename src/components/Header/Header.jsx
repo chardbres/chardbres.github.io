@@ -68,8 +68,11 @@ const headerCSS = css`
   background: #212529;
   color: #fff;
   display: flex;
-  height: 9vh;
+  height: 10vh;
   flex-direction: row;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%;
   z-index: 5;
 
   h1 {
