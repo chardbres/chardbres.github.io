@@ -1,87 +1,46 @@
 /** @jsx jsx */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { css, jsx } from '@emotion/core'
-import Media from 'react-media'
 
 import splashImg from './../../assets/img/Header/Beached Lobster Pot.jpg'
 
 const Splash = () => {
   return (
-
-    <Media queries={{
-        mobile: "(max-width: 500px)",
-        mid: "(min-width: 501px) and (max-width: 1200px)",
-        large: "(min-width: 1201px)"
-    }}>
-
-    {matches => (
-      <Fragment>
-        {/* Mobile View */}
-        {matches.mobile &&
-          <div css={mobileImg}>
+          <div css={splash}>
             <img src={splashImg} alt='Beached Lobster Pot' />
           </div>
-        }
-
-        {/* Tablet View */}
-        {matches.mid &&
-          <div css={midImg}>
-            <img src={splashImg} alt='Beached Lobster Pot' />
-          </div>
-        }
-
-        {/* Desktop View */}
-        {matches.large &&
-          <div css={desktopImg}>
-            <img src={splashImg} alt='Beached Lobster Pot' />
-          </div>
-        }
-      </Fragment>
-    )}
-    </Media>
-
   )
 }
 
 export default Splash;
 
-const mobileImg = css`
-  z-index: -5;
-
-  img {
-    position: relative;
-    width: 100%;
-    z-index: -5;
-  }
-`
-
-const midImg = css`
-  align-items: center;
+const splash = css`
   background: #212529;
-  display: flex;
-  height: 50vh;
-  justify-content: center;
-  width: 100%;
-
-  img {
-    position: relative;
-    width: 80%;
-  }
-`
-
-const desktopImg = css`
-  align-items: center;
-  background: #212529;
-  display: flex;
-  height: 80vh;
-  justify-content: center;
   position: fixed;
-  width: 100%;
   top: 10vh;
-  z-index: 1;
+  z-index: -1;
+
+  @media (min-width: 501px) {
+    height: 50vh;
+    margin: auto;
+    width: 100vw;
+  }
+
+  @media (min-width: 1201px) {
+    align-items: center;
+    display: flex;
+    height: 75vh;
+    justify-content: center;
+  }
 
   img {
-    position: relative;
-    height: 90%;
+    width: 100vw;
+    @media (min-width: 501px) {
+      width: 80%;
+    };
+    @media (min-width: 1201px) {
+      height: 90%;
+      width: auto;
+    }
   }
 `
