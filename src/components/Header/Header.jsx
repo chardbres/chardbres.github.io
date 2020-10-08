@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core'
 import Media from 'react-media'
 
@@ -8,7 +8,16 @@ import '@animated-burgers/burger-arrow/dist/styles.css'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [offset, setOffset] = useState(0)
   const headerTags = [ 'Projects', 'Photography', 'Writing', 'About Me', 'Contact']
+
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffset(window.pageYOffset)
+    }
+  }, [])
+
+  console.log(offset)
 
   const toggleOpen = event => {
     event.persist()
@@ -19,6 +28,7 @@ const Header = () => {
     return key === true ? 'open' : 'closed'
   }
 
+
   return (
 
     <Media queries={{
@@ -28,7 +38,6 @@ const Header = () => {
 
       {matches => (
         <Fragment>
-
           {/* Mobile View */}
           {matches.mobile &&
               <div css={wrapper}>
@@ -38,7 +47,12 @@ const Header = () => {
                 </div>
                 <div id={setProp(isOpen)} css={mobileCSS}>
                   {headerTags.map(tag => {
-                    return <p key={tag}>{tag}</p>
+                    return <p
+                      key={tag}
+                      ref={tag}
+                      >
+                      {tag}
+                    </p>
                   })}
                 </div>
               </div>
@@ -61,7 +75,6 @@ const Header = () => {
 
     </Media>
   )
-
 }
 
 export default Header

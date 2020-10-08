@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { css, jsx } from '@emotion/core'
 import { Container, Row, Col } from 'react-bootstrap'
-// import 'bootstrap/dist/css/bootstrap.min.css'
 import Image from 'react-bootstrap/Image'
 
 import Profile from './../../assets/img/Intro/Profile.jpeg'
@@ -17,7 +16,7 @@ import HerokuLogo from './../../assets/img/Intro/heroku.svg'
 
 
 
-const Intro = () => {
+const Intro = ({visible}) => {
   const icons = [
     [JavascriptLogo, 'JavaScript'],
     [ReactLogo, 'ReactJS'],
@@ -29,10 +28,13 @@ const Intro = () => {
     [HerokuLogo, 'Heroku']
   ]
 
+  useEffect(() => {
+    console.log(visible === 'shown' ? 'Intro here!' : 'Intro hidden!')
+  },[visible])
+
   const Icons = props => {
     return <Col className='Bin'><img className='Icon' src={props.icon[0]} alt='icon' /><p>{props.icon[1]}</p></Col>
   }
-
 
   return (
     <div css={IntroCSS}>
@@ -56,12 +58,10 @@ export default Intro;
 
 const IntroCSS = css`
   background: #e8e8e8;
-  height: 100vh;
-  position: relative;
-  z-index: 2;
+  height: 120vh;
 
   .ProfilePic {
-    height: 70%;
+    height: 70vh;
     margin: 0 auto 4vh;
 
     @media (max-width: 300px) {

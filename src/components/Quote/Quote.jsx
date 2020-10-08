@@ -2,14 +2,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core'
 
-const Quote = () => {
-  const [offset, setOffset] = useState(0)
-
-  useEffect(() => {
-    window.onscroll = () => {
-      setOffset(window.pageYOffset)
-    }
-  }, [])
+const Quote = ({ offset }) => {
+  // const [offset, setOffset] = useState(0)
+  //
+  // useEffect(() => {
+  //   window.onscroll = () => {
+  //     setOffset(window.pageYOffset)
+  //   }
+  // }, [])
 
   const Quote = () => {
     return (
