@@ -3,26 +3,33 @@ import React, { Fragment } from 'react';
 import { css, jsx } from '@emotion/core'
 import { Container, Row, Col } from 'react-bootstrap'
 
-import Project from './Project'
+import Article from './Article'
 
-const Projects = () => {
+// Image imports
+import Funnel from './img/funnel.jpg'
 
+const Writing = () => {
   return (
-    <div id='Projects' css={ProjectsCSS}>
-      <h1>Projects</h1>
+    <div id='Writings' css={WritingsCSS}>
+      <h1>Writing</h1>
         <Container css={ContainerCSS} fluid='true'>
         <Row css={RowCSS} xs={1} md={3}>
-          <Project />
+          <Article
+            title={'How I Implemented a Simple Filter Component in React'}
+            color={'black'}
+            img={Funnel}
+            url={'https://medium.com/@richard.m.bresnahan/how-i-implemented-a-simple-filter-feature-in-react-6d23289baf9a'}
+          />
         </Row>
       </Container>
     </div>
   )
 }
 
-export default Projects;
+export default Writing
 
-const ProjectsCSS = css`
-  background: SteelBlue;
+const WritingsCSS = css`
+  background: DarkRed;
   height: 120vh;
 
   h1 {
@@ -47,12 +54,4 @@ const RowCSS = css`
   justify-content: center;
   margin: 0;
   width: 100%;
-`
-
-const ProjectCSS = css`
-  border: 1px solid black;
-  background: white;
-  height: 50%;
-  margin: 0;
-  z-index: 50;
 `

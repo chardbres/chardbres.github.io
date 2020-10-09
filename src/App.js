@@ -7,7 +7,6 @@ import { css, jsx } from '@emotion/core'
 
 import Burger from '@animated-burgers/burger-arrow'
 import '@animated-burgers/burger-arrow/dist/styles.css'
-import { useIsVisible } from "react-is-visible"
 
 // import Header from './components/Header/Header'
 import Splash from './components/Splash/Splash'
@@ -15,13 +14,16 @@ import Quote from './components/Quote/Quote'
 import Intro from './components/Intro/Intro'
 import Photography from './components/Photography/Photography'
 import Projects from './components/Projects/Projects'
+import Writing from './components/Writing/Writing'
+import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+
+
 
 const App = () => {
-  const [isActive, setIsActive] = useState({
-    projects: false
-  })
   // Section refs
   const topRef = useRef()
+  const introRef = useRef()
   const projectRef = useRef()
   const photoRef = useRef()
   const writingRef = useRef()
@@ -72,11 +74,12 @@ const App = () => {
                     <Burger direction='up' isOpen={isOpen} onClick={toggleOpen} style={{'font-size': '10px'}}/>
                   </div>
                   <div id={setOpenStatus(isOpen)} css={mobileCSS}>
-                    <p onClick={() => scrollTo(projectRef)}>Projects</p>
-                    <p onClick={() => scrollTo(photoRef)}>Photography</p>
-                    <p onClick={() => scrollTo(writingRef)}>Writing</p>
-                    <p onClick={() => scrollTo(aboutRef)}>About Me</p>
-                    <p onClick={() => scrollTo(contactRef)}>Contact</p>
+                    <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>Intro</p>
+                    <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
+                    <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
+                    <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
+                    <p className={offset >= 5.80 && offset < 7.00 ? 'active' : ''} onClick={() => scrollTo(aboutRef)}>About Me</p>
+                    <p className={offset >= 7.00 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
                   </div>
                 </div>
             }
@@ -88,11 +91,12 @@ const App = () => {
                   <h1 onClick={() => scrollTo(topRef)}>R|B</h1>
                 </div>
                 <div style={{'margin-right': '5vw'}}>
+                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>Intro</p>
                   <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
-                  <p className={offset >= 3.40 ? 'active' : ''} onClick={() => scrollTo(projectRef)} tag='projects'>Projects</p>
-                  <p onClick={() => scrollTo(writingRef)}>Writing</p>
-                  <p onClick={() => scrollTo(aboutRef)}>About Me</p>
-                  <p onClick={() => scrollTo(contactRef)}>Contact</p>
+                  <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
+                  <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
+                  <p className={offset >= 5.80 && offset < 7.00 ? 'active' : ''} onClick={() => scrollTo(aboutRef)}>About Me</p>
+                  <p className={offset >= 7.00 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
                 </div>
               </div>
             }
@@ -104,9 +108,12 @@ const App = () => {
 
       <div ref={topRef}><Splash /></div>
       <Quote offset={offset}/>
-      <div css={divCSS}><Intro /></div>
+      <div css={divCSS} ref={introRef}><Intro /></div>
       <div css={divCSS} ref={photoRef}><Photography /></div>
       <div css={divCSS} ref={projectRef}><Projects /></div>
+      <div css={divCSS} ref={writingRef}><Writing /></div>
+      <div css={divCSS} ref={aboutRef}><About /></div>
+      <div css={divCSS} ref={contactRef}><Contact /></div>
     </div>
   )
 

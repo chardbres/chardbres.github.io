@@ -6,9 +6,9 @@ import splashImg from './../../assets/img/Header/Beached Lobster Pot.jpg'
 
 const Splash = () => {
   return (
-          <div css={splash}>
-            <img src={splashImg} alt='Beached Lobster Pot' />
-          </div>
+    <div css={splash}>
+      <img src={splashImg} alt='Beached Lobster Pot' />
+    </div>
   )
 }
 

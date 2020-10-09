@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { css, jsx } from '@emotion/core'
 import { Col } from 'react-bootstrap'
 
-const Project = props => {
+const Article = props => {
   const color = props.color
 
   const openInNewTab = url => {
@@ -13,7 +13,7 @@ const Project = props => {
 
   return (
     <Fragment>
-      <Col id={props.tag} css={ProjectCSS} onClick={() => openInNewTab(props.url)} >
+      <Col id={props.tag} css={ArticleCSS} onClick={() => openInNewTab(props.url)} >
         <img src={props.img} alt='' />
         <h4 css={css`color: ${color}`}>{props.title}</h4>
       </Col>
@@ -21,9 +21,9 @@ const Project = props => {
   )
 }
 
-export default Project;
+export default Article
 
-const ProjectCSS = css`
+const ArticleCSS = css`
   align-items: center;
   background: white;
   display: flex;

@@ -34,7 +34,7 @@ const Quote = ({ offset }) => {
       {/* Spacing Div */}
       <div css={SpacingDiv}></div>
       <div css={IntroCSS}>
-        <FadingName opacity={1 - (offset / 200)} />
+        <FadingName opacity={1 - (offset / .4)} />
         <Quote />
       </div>
     </Fragment>
