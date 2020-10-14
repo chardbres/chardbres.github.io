@@ -15,7 +15,6 @@ import Intro from './components/Intro/Intro'
 import Photography from './components/Photography/Photography'
 import Projects from './components/Projects/Projects'
 import Writing from './components/Writing/Writing'
-import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
 
@@ -27,7 +26,6 @@ const App = () => {
   const projectRef = useRef()
   const photoRef = useRef()
   const writingRef = useRef()
-  const aboutRef = useRef()
   const contactRef = useRef()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -78,8 +76,7 @@ const App = () => {
                     <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
                     <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
                     <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
-                    <p className={offset >= 5.80 && offset < 7.00 ? 'active' : ''} onClick={() => scrollTo(aboutRef)}>About Me</p>
-                    <p className={offset >= 7.00 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
+                    <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
                   </div>
                 </div>
             }
@@ -91,12 +88,11 @@ const App = () => {
                   <h1 onClick={() => scrollTo(topRef)}>R|B</h1>
                 </div>
                 <div style={{'margin-right': '5vw'}}>
-                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>Intro</p>
+                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>About Me</p>
                   <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
                   <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
                   <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
-                  <p className={offset >= 5.80 && offset < 7.00 ? 'active' : ''} onClick={() => scrollTo(aboutRef)}>About Me</p>
-                  <p className={offset >= 7.00 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
+                  <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
                 </div>
               </div>
             }
@@ -112,7 +108,6 @@ const App = () => {
       <div css={divCSS} ref={photoRef}><Photography /></div>
       <div css={divCSS} ref={projectRef}><Projects /></div>
       <div css={divCSS} ref={writingRef}><Writing /></div>
-      <div css={divCSS} ref={aboutRef}><About /></div>
       <div css={divCSS} ref={contactRef}><Contact /></div>
     </div>
   )

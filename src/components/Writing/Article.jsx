@@ -43,12 +43,14 @@ const ArticleCSS = css`
     height: 100%;
     width: 100%;
     left: 0;
-    object-fit: cover;
     opacity: .8;
     position: absolute;
     z-index: 0;
+    transition: filter .6s;
+    transition-timing-function: cubic-bezier(.37, 0, .63, 1);
 
     &:hover {
+      filter: grayscale(100%);
       opacity: .5;
     }
   }

@@ -5,6 +5,11 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 import Project from './Project'
 
+// Imported Images
+import WorkFromRoam from './../../assets/img/Projects/workfromroam.PNG'
+import Rickhouse from './../../assets/img/Projects/rickhouse.PNG'
+import SmashFactor from './../../assets/img/Projects/smashfactor.PNG'
+
 const Projects = () => {
 
   return (
@@ -12,7 +17,21 @@ const Projects = () => {
       <h1>Projects</h1>
         <Container css={ContainerCSS} fluid='true'>
         <Row css={RowCSS} xs={1} md={3}>
-          <Project />
+          <Project
+            title={'Work From Roam'}
+            color={'black'}
+            img={WorkFromRoam}
+          />
+          <Project
+            title={'Rickhouse'}
+            color={'black'}
+            img={Rickhouse}
+          />
+          <Project
+            title={'Smash Factor'}
+            color={'black'}
+            img={SmashFactor}
+          />
         </Row>
       </Container>
     </div>

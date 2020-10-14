@@ -4,6 +4,12 @@ import { css, jsx } from '@emotion/core'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 
+// Link imports
+import LinkedIn from './../../assets/img/Intro/linkedin.png'
+import GitHub from './../../assets/img/Intro/github.png'
+import Resume from './../../assets/img/Intro/resume.svg'
+
+// Logo imports
 import Profile from './../../assets/img/Intro/Profile.jpeg'
 import ReactLogo from './../../assets/img/Intro/react.svg'
 import NodeLogo from './../../assets/img/Intro/nodejs.svg'
@@ -13,6 +19,9 @@ import JavascriptLogo from './../../assets/img/Intro/javascript.svg'
 import NpmLogo from './../../assets/img/Intro/npm.svg'
 import PostgresqlLogo from './../../assets/img/Intro/postgres.svg'
 import HerokuLogo from './../../assets/img/Intro/heroku.svg'
+
+// Resume import
+import MyResume from './Resume.pdf'
 
 
 
@@ -44,6 +53,11 @@ const Intro = ({visible}) => {
         <p>Software Engineer | Amateur Photographer</p>
       </div>
       <Container>
+        <Row className='LinksRow'>
+          <a href='https://www.linkedin.com/in/rickbresnahan/' target='_blank' rel='noopener noreferrer'><img src={LinkedIn} alt='LinkedIn'/></a>
+          <a href='https://github.com/chardbres' target='_blank' rel='noopener noreferrer'><img src={GitHub} alt='GitHub'/></a>
+          <a href={MyResume} target='_blank' rel='noopener noreferrer'><img src={Resume} alt='Resume'/></a>
+        </Row>
         <Row className='IconRow'>
           {icons.map(icon => {
             return <Icons icon={icon} />
@@ -54,7 +68,7 @@ const Intro = ({visible}) => {
   )
 }
 
-export default Intro;
+export default Intro
 
 const IntroCSS = css`
   background: #e8e8e8;
@@ -69,7 +83,7 @@ const IntroCSS = css`
     }
 
     @media (min-width: 1201px) {
-      margin: 0 auto 10vh;
+      margin: 0 auto 4vh;
     }
 
     img {
@@ -123,7 +137,7 @@ const IntroCSS = css`
       }
 
       @media (min-width: 400px) {
-        height: 6vh;
+        height: 5vh;
       }
     }
 
@@ -134,6 +148,20 @@ const IntroCSS = css`
       left: 50%; top: 50%;
       margin: 0;
       transform: translate(-50%, -50%);
+    }
+  }
+
+  .LinksRow {
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 5vh;
+      margin: 15px 1vw;
+
+      &:hover {
+        opacity: 50%;
+      }
     }
   }
 `
