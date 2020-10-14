@@ -33,7 +33,7 @@
     "test:coverage": "jest --coverage --colors",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -77,5 +77,5 @@
       "text"
     ]
   },
-  "homepage": "http://chardbres/chardbres.github.io"
+  "homepage": "http://chardbres.github.io/personal-site"
 }
