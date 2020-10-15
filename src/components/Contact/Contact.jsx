@@ -29,7 +29,7 @@ const Contact = () => {
 
   const onSubmit = event => {
     event.preventDefault()
-    fetch('https://usebasin.com/f/5604ad52d44e', {
+    fetch('https://usebasin.com/f/5604ad52d44e.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'applicaton/JSON',
@@ -68,8 +68,8 @@ const Contact = () => {
                 <Row>
                   <input placeholder = 'Message' type='text' required value = {formState.message} onChange={onMsgChange}/>
                 </Row>
+                <button type='submit'>Submit</button>
               </form>
-              <button type='submit'>Submit</button>
             </section>
           </Col>
         </Row>
