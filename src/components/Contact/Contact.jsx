@@ -52,20 +52,20 @@ const Contact = () => {
           <Col>
             <section css={FormCSS}>
               <p>Please drop me a line!</p>
-              <form onSubmit={onSubmit}>
+              <form action='https://usebasin.com/f/5604ad52d44e' method='POST'>
                 <Row>
                   <Col sm={6}>
-                    <input placeholder = 'Name' type='text' required value = {formState.name} onChange={onNameChange} />
+                    <input placeholder = 'Name' type='text' name='name' required value = {formState.name} onChange={onNameChange} />
                   </Col>
                   <Col sm={6}>
-                    <input placeholder = 'Email' type='email' required value = {formState.email} onChange={onEmailChange} />
+                    <input placeholder = 'Email' type='email' name='email' required value = {formState.email} onChange={onEmailChange} />
                   </Col>
                 </Row>
                 <Row>
-                  <input placeholder = 'Subject' type='text' required value = {formState.subject} onChange={onSubjectChange}/>
+                  <input placeholder = 'Subject' type='text' name='subject' required value = {formState.subject} onChange={onSubjectChange} />
                 </Row>
                 <Row>
-                  <input placeholder = 'Message' type='text' required value = {formState.message} onChange={onMsgChange}/>
+                  <input placeholder = 'Message' type='text' name='message' required value = {formState.message} onChange={onMsgChange} />
                 </Row>
                 <button type='submit'>Submit</button>
               </form>
