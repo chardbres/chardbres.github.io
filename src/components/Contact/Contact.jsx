@@ -53,7 +53,7 @@ const Contact = () => {
           <Col>
             <section css={FormCSS}>
               <p>Please drop me a line!</p>
-              <form onSubmit={onSubmit}>
+              <form action='https://usebasin.com/f/5604ad52d44e' method='POST'>
                 <Row>
                   <Col sm={6}>
                     <input placeholder = 'Name' type='text' required value = {formState.name} onChange={onNameChange} />
