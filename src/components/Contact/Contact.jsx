@@ -32,8 +32,8 @@ const Contact = () => {
     fetch('https://usebasin.com/f/5604ad52d44e.json', {
       method: 'POST',
       headers: {
-        'Content-Type': 'applicaton/JSON',
-        Accept: 'applicatoin/json'
+        'Content-Type': 'application/JSON',
+        Accept: 'application/json'
       },
       body: JSON.stringify(formState)
     })
