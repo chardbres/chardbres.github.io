@@ -29,13 +29,17 @@ const Contact = () => {
 
   const onSubmit = event => {
     event.preventDefault()
-    fetch('https://usebasin.com/f/5604ad52d44e.json', {
+    fetch('https://usebasin.com/f/5604ad52d44e', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/JSON',
-        Accept: 'application/json'
+        'Content-Type': 'String'
       },
-      body: JSON.stringify(formState)
+      body: {
+        name: formState.name,
+        email: formState.email,
+        subject: formState.subject,
+        message: formState.message
+      }
     })
     .then(function(response) {
       console.log(response)
@@ -53,7 +57,7 @@ const Contact = () => {
           <Col>
             <section css={FormCSS}>
               <p>Please drop me a line!</p>
-              <form action='https://usebasin.com/f/5604ad52d44e' method='POST'>
+              <form onSubmit={onSubmit}>
                 <Row>
                   <Col sm={6}>
                     <input placeholder = 'Name' type='text' required value = {formState.name} onChange={onNameChange} />
@@ -63,7 +67,7 @@ const Contact = () => {
                   </Col>
                 </Row>
                 <Row>
-                  <input placeholder = 'Subject' type = 'text' required value = {formState.subject} onChange={onSubjectChange}/>
+                  <input placeholder = 'Subject' type='text' required value = {formState.subject} onChange={onSubjectChange}/>
                 </Row>
                 <Row>
                   <input placeholder = 'Message' type='text' required value = {formState.message} onChange={onMsgChange}/>
