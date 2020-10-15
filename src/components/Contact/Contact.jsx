@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useState } from 'react';
 import { css, jsx } from '@emotion/core'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -27,53 +27,50 @@ const Contact = () => {
     setFormState({ message: event.target.value })
   }
 
-  const onSubmit = event => {
-    event.preventDefault()
-    fetch('https://usebasin.com/f/5604ad52d44e', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'text/html; charset=UTF-8'
-      },
-      body: formState
-    })
-    .then(function(response) {
-      console.log(response)
-    })
-    .catch(function(error) {
-      console.error(error)
-    })
-  }
+  // const onSubmit = event => {
+  //   event.preventDefault()
+  //   fetch('https://usebasin.com/f/5604ad52d44e', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'text/html; charset=UTF-8'
+  //     },
+  //     body: formState
+  //   })
+  //   .then(function(response) {
+  //     console.log(response)
+  //   })
+  //   .catch(function(error) {
+  //     console.error(error)
+  //   })
+  // }
 
   return (
     <div id='Contact' css={ContactCSS}>
       <h1>Contact Me</h1>
-      <Container>
-        <Row>
-          <Col>
-            <section css={FormCSS}>
-              <p>Please drop me a line!</p>
-              <form action='https://usebasin.com/f/5604ad52d44e' method='POST'>
-                <Row>
-                  <Col sm={6}>
-                    <input placeholder = 'Name' type='text' name='name' required value = {formState.name} onChange={onNameChange} />
-                  </Col>
-                  <Col sm={6}>
-                    <input placeholder = 'Email' type='email' name='email' required value = {formState.email} onChange={onEmailChange} />
-                  </Col>
-                </Row>
-                <Row>
-                  <input placeholder = 'Subject' type='text' name='subject' required value = {formState.subject} onChange={onSubjectChange} />
-                </Row>
-                <Row>
-                  <input placeholder = 'Message' type='text' name='message' required value = {formState.message} onChange={onMsgChange} />
-                </Row>
-                <button type='submit'>Submit</button>
-              </form>
-            </section>
-          </Col>
-        </Row>
-      </Container>
-
+      <form css={FormCSS} action='https://usebasin.com/f/5604ad52d44e' method='POST'>
+        <p><i>Please drop me a line and I'll get back to you soon!</i></p>
+        <Container>
+            <Row className='formRow' >
+              <Col className='formCol' sm={6}>
+                <input placeholder = 'Name' type='text' name='name' required value = {formState.name} onChange={onNameChange} />
+              </Col>
+              <Col className='formCol' sm={6}>
+                <input placeholder = 'Email' type='email' name='email' required value = {formState.email} onChange={onEmailChange} />
+              </Col>
+            </Row>
+            <Row className='formRow' >
+              <Col className='formCol' sm={12}>
+                <input style={{'width': '95%'}} placeholder = 'Subject.....' type='text' name='subject' required value = {formState.subject} onChange={onSubjectChange} />
+              </Col>
+            </Row>
+            <Row className='formRow' >
+              <Col className='formCol' sm={12}>
+                <textarea rows='7' placeholder='Message.....' type='text' name='message' required value = {formState.message} onChange={onMsgChange}></textarea>
+              </Col>
+            </Row>
+            <Button variant='outline-light' type='submit'>Submit</Button>
+        </Container>
+      </form>
     </div>
   )
 }
@@ -81,8 +78,11 @@ const Contact = () => {
 export default Contact
 
 const ContactCSS = css`
+  align-items: center;
   background: darkslategray;
+  display: flex;
   height: 100vh;
+  justify-content: center;
 
   h1 {
     color: white;
@@ -95,10 +95,36 @@ const ContactCSS = css`
 `
 
 const FormCSS = css`
-  border: 1px solid red;
-  margin-top: 20vh;
+  width: 60%;
 
-  Row {
-    border: 1px solid blue;
+  p {
+    color: white;
+    font-family: 'Montserrat';
+    margin: 1rem auto 2rem;
+  }
+
+  .formRow {
+    margin: 1.5rem auto;
+  }
+
+  .formCol {
+
+    input {
+      background: transparent;
+      color: white;
+      border-top: none; border-left: none; border-right: none;
+      border-bottom: 1px solid white;
+      width: 90%;
+      ::placeholder {color: white; opacity: .5;}
+    }
+
+    textarea {
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: white;
+      width: 95%;
+      ::placeholder {color: white; opacity: .5;}
+    }
   }
 `
