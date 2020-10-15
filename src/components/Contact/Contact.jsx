@@ -31,12 +31,10 @@ const Contact = () => {
     event.preventDefault()
     fetch('https://usebasin.com/f/5604ad52d44e', {
       method: 'POST',
-      body: {
-        name: formState.name,
-        email: formState.email,
-        subject: formState.subject,
-        message: formState.message
-      }
+      headers: {
+        'Content-Type': 'text/html; charset=UTF-8'
+      },
+      body: formState
     })
     .then(function(response) {
       console.log(response)
