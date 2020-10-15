@@ -31,9 +31,6 @@ const Contact = () => {
     event.preventDefault()
     fetch('https://usebasin.com/f/5604ad52d44e', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'String'
-      },
       body: {
         name: formState.name,
         email: formState.email,
