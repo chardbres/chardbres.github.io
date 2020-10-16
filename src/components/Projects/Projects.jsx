@@ -41,7 +41,7 @@ const Projects = () => {
 export default Projects;
 
 const ProjectsCSS = css`
-  background: SteelBlue;
+  background: steelblue;
   height: 120vh;
 
   h1 {

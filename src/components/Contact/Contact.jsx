@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { css, jsx } from '@emotion/core'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
+// Logo imports
+import GitHubWhite from './../../assets/img/Contact/githubwhite.png'
+import LinkedInWhite from './../../assets/img/Contact/linkedinwhite.png'
+
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -71,6 +75,10 @@ const Contact = () => {
             <Button variant='outline-light' type='submit'>Submit</Button>
         </Container>
       </form>
+      <div css={FooterCSS}>
+        <footer><small>&copy; Copyright 2020, Rick Bresnahan. All Rights Reserved.</small></footer>
+        <a href='https://www.linkedin.com/in/rickbresnahan/' target='_blank' rel='noopener noreferrer'><img src={LinkedInWhite} alt='LinkedIn'/></a>
+        <a href='https://github.com/chardbres' target='_blank' rel='noopener noreferrer'><img src={GitHubWhite} alt='GitHub'/></a>      </div>
     </div>
   )
 }
@@ -79,7 +87,7 @@ export default Contact
 
 const ContactCSS = css`
   align-items: center;
-  background: darkslategray;
+  background: #212529;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -126,5 +134,24 @@ const FormCSS = css`
       width: 95%;
       ::placeholder {color: white; opacity: .5;}
     }
+  }
+`
+
+const FooterCSS = css`
+  align-items: center;
+  bottom: 1vh;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  position: absolute;
+
+  img {
+    margin: 0 .5rem 0 0;
+    height: 1rem;
+  }
+
+  small {
+    margin: 0 .5rem;
   }
 `

@@ -29,7 +29,7 @@ const Writing = () => {
 export default Writing
 
 const WritingsCSS = css`
-  background: DarkRed;
+  background: firebrick;
   height: 120vh;
 
   h1 {
