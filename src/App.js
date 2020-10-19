@@ -33,6 +33,7 @@ const App = () => {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
+    document.title = `Rick Bresnahan`
     window.onscroll = () => {
       setOffset(window.pageYOffset / window.innerHeight)
     }
