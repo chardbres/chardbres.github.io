@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "94bb580f8a9d6b192c6913b67596d77c",
+    "revision": "cbfeadbeb801d8292e22dae5ddd4707b",
     "url": "/index.html"
   },
   {
-    "revision": "e496720a5793915f7c79",
+    "revision": "09303bc2ddc4cf9db354",
     "url": "/static/css/2.c1563c7a.chunk.css"
   },
   {
-    "revision": "79a8a746f19106dc1a7e",
+    "revision": "79ca166bf743741f048b",
     "url": "/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "e496720a5793915f7c79",
-    "url": "/static/js/2.05395182.chunk.js"
+    "revision": "09303bc2ddc4cf9db354",
+    "url": "/static/js/2.e8a3df14.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/static/js/2.05395182.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.e8a3df14.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79a8a746f19106dc1a7e",
-    "url": "/static/js/main.250bddad.chunk.js"
+    "revision": "79ca166bf743741f048b",
+    "url": "/static/js/main.c330ced9.chunk.js"
   },
   {
     "revision": "766df7dbb5392e1314ed",
@@ -48,6 +48,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/GhostStair.bbe4694e.jpg"
   },
   {
+    "revision": "65c17b6e7f239abc6c695d319508d83b",
+    "url": "/static/media/GrassBridge.65c17b6e.jpg"
+  },
+  {
+    "revision": "8e6b2496928845f9036b82bd1c73a29d",
+    "url": "/static/media/LightTransit.8e6b2496.jpg"
+  },
+  {
     "revision": "f3b0a0f4013c9d95a931bb59f37b469a",
     "url": "/static/media/LobsterPot.f3b0a0f4.jpg"
   },
@@ -58,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "08982faec2f577a3d50652db4ff42fdf",
     "url": "/static/media/Resume.08982fae.pdf"
+  },
+  {
+    "revision": "f185877b145656114ac571f077f957da",
+    "url": "/static/media/WabbitSeason.f185877b.jpg"
   },
   {
     "revision": "925f2ee402701b7ae72e828e4d39c644",
