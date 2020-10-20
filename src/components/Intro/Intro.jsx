@@ -111,10 +111,6 @@ const IntroCSS = css`
     margin: auto;
     width: 90%;
 
-    @media (min-width: 501px) {
-      width: 70%;
-    }
-
     .Bin {
       &: hover {
         .Icon {
@@ -133,10 +129,10 @@ const IntroCSS = css`
       margin: 15px 0;
 
       @media (min-width: 300px) {
-        height: 5vh;
+        height: 4vh;
       }
 
-      @media (min-width: 400px) {
+      @media (min-width: 1050px) {
         height: 5vh;
       }
     }
@@ -149,6 +145,14 @@ const IntroCSS = css`
       margin: 0;
       transform: translate(-50%, -50%);
     }
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
+    @media (min-width: 1050px) {
+      width: 70%;
+    }
   }
 
   .LinksRow {
@@ -157,10 +161,14 @@ const IntroCSS = css`
 
     img {
       height: 5vh;
-      margin: 15px 1vw;
+      margin: 3vh 1vw;
 
       &:hover {
         opacity: 50%;
+      }
+
+      @media (max-width: 1050px) {
+        margin: 3vh;
       }
     }
   }

@@ -43,6 +43,7 @@ const ProjectCSS = css`
     height: 100%;
     width: 100%;
     left: 0;
+    object-fit: cover;
     opacity: .8;
     position: absolute;
     z-index: 0;

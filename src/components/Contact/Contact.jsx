@@ -55,7 +55,7 @@ const Contact = () => {
         <p><i>Please drop me a line and I'll get back to you soon!</i></p>
         <Container>
             <Row className='formRow' >
-              <Col className='formCol' sm={6}>
+              <Col className='formCol' sm={6} >
                 <input placeholder = 'Name' type='text' name='name' required value = {formState.name} onChange={onNameChange} />
               </Col>
               <Col className='formCol' sm={6}>
@@ -69,7 +69,7 @@ const Contact = () => {
             </Row>
             <Row className='formRow' >
               <Col className='formCol' sm={12}>
-                <textarea rows='7' placeholder='Message.....' type='text' name='message' required value = {formState.message} onChange={onMsgChange}></textarea>
+                <textarea rows='8' placeholder='Message.....' type='text' name='message' required value = {formState.message} onChange={onMsgChange}></textarea>
               </Col>
             </Row>
             <Button variant='outline-light' type='submit'>Submit</Button>
@@ -134,6 +134,14 @@ const FormCSS = css`
       width: 95%;
       ::placeholder {color: white; opacity: .5;}
     }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
   }
 `
 

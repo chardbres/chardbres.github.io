@@ -13,7 +13,7 @@ const Writing = () => {
     <div id='Writings' css={WritingsCSS}>
       <h1>Writing</h1>
         <Container css={ContainerCSS} fluid='true'>
-        <Row css={RowCSS} xs={1} md={3}>
+        <Row css={RowCSS} xs={1} md={2} xl={3}>
           <Article
             title={'How I Implemented a Simple Filter Component in React'}
             color={'black'}

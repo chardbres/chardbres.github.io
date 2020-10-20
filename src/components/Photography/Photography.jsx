@@ -9,7 +9,6 @@ import Arrow from './../../assets/img/Photography/arrow.svg'
 // Image Slides
 import GhostStair from './Slides/GhostStair.jpg'
 import LobsterPot from './Slides/LobsterPot.jpg'
-import CamdenStars from './Slides/CamdenStars.png'
 import AfterTheShow from './Slides/AfterTheShow.jpg'
 import WabbitSeason from './Slides/WabbitSeason.jpg'
 import LightTransit from './Slides/LightTransit.jpg'
@@ -22,7 +21,7 @@ const Photography = () => {
         <h1>Photography</h1>
         <p>Check me out on</p><a href='https://500px.com/p/richardmbresnahan?view=photos' target='_blank' rel='noopener noreferrer'><img src={Logo} /><img src={Arrow} style={{'height': '50px'}}/></a>
       </div>
-      <Carousel style={{'position': 'relative', 'top': '20vh'}}>
+      <Carousel className='carousel'>
         <Carousel.Item>
           <img src={GhostStair} alt='The Ghost Stair'/>
           <Carousel.Caption>
@@ -34,12 +33,6 @@ const Photography = () => {
           <Carousel.Caption>
             <h5>Beached</h5>
           </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={CamdenStars} alt='Camden Stars'/>
-            <Carousel.Caption>
-              <h5>Camden Star Trails</h5>
-            </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={AfterTheShow} alt='After the Show'/>
@@ -76,6 +69,15 @@ const PhotographyCSS = css`
   background: dimgray;
   height: 120vh;
 
+  .carousel {
+    position: relative;
+    top: 30vh;
+
+    @media (min-width: 1050px) {
+      top: 20vh;
+    }
+  }
+
   .heading {
     align-items: center;
     display: flex;
@@ -105,6 +107,12 @@ const PhotographyCSS = css`
   }
 
   img {
-    height: 70vh;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1040px) {
+    img {
+      height: 70vh;
+    }
   }
 `

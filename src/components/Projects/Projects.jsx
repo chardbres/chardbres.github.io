@@ -16,7 +16,7 @@ const Projects = () => {
     <div id='Projects' css={ProjectsCSS}>
       <h1>Projects</h1>
         <Container css={ContainerCSS} fluid='true'>
-        <Row css={RowCSS} xs={1} md={3}>
+        <Row css={RowCSS} xs={1} sm={2} xl={3}>
           <Project
             title={'Work From Roam'}
             color={'black'}
@@ -55,6 +55,7 @@ const ProjectsCSS = css`
 `
 
 const ContainerCSS = css`
+  border: 1px solid red;
   height: 70vh;
   position: relative;
   top: 20vh;
@@ -66,12 +67,4 @@ const RowCSS = css`
   justify-content: center;
   margin: 0;
   width: 100%;
-`
-
-const ProjectCSS = css`
-  border: 1px solid black;
-  background: white;
-  height: 50%;
-  margin: 0;
-  z-index: 50;
 `

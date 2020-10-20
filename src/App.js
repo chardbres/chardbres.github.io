@@ -144,13 +144,20 @@ const headerCSS = css`
       font-family: 'IBM Plex Mono';
       font-size: 2.5rem;
       margin: 0 10vw;
+
+      @media (max-width: 780px) {
+        margin: 0 5vw;
+      }
     }
 
     .active {
       font-family: 'Libre Caslon Display';
-      font-size: 150%;
       font-style: italic;
       font-weight: bold;
+
+      @media (min-width: 600px) {
+        font-size: 150%;
+      }
     }
 
     p {
@@ -162,6 +169,15 @@ const headerCSS = css`
       margin: 0 1rem;
       padding: .5rem;
       text-decoration: none;
+
+      @media (max-width: 600px) {
+        font-size: 60%;
+        margin: 0;
+      }
+
+      @media (max-width: 780px) {
+        margin: 0 .5rem;
+      }
     }
   }
 `
