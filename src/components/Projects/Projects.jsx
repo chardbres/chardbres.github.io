@@ -55,7 +55,6 @@ const ProjectsCSS = css`
 `
 
 const ContainerCSS = css`
-  border: 1px solid red;
   height: 70vh;
   position: relative;
   top: 20vh;
