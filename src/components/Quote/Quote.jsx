@@ -3,13 +3,6 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core'
 
 const Quote = ({ offset }) => {
-  // const [offset, setOffset] = useState(0)
-  //
-  // useEffect(() => {
-  //   window.onscroll = () => {
-  //     setOffset(window.pageYOffset)
-  //   }
-  // }, [])
 
   const Quote = () => {
     return (
@@ -114,7 +107,7 @@ const IntroCSS = css`
     justify-content: center;
     margin: 0 auto;
     position: relative;
-    width: 70%;
+    width: 60%;
 
     @media (min-width: 1201px) {
       top: 27.5vh;
