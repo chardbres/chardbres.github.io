@@ -11,6 +11,9 @@ import GhostStair from './Slides/GhostStair.jpg'
 import LobsterPot from './Slides/LobsterPot.jpg'
 import CamdenStars from './Slides/CamdenStars.png'
 import AfterTheShow from './Slides/AfterTheShow.jpg'
+import WabbitSeason from './Slides/WabbitSeason.jpg'
+import LightTransit from './Slides/LightTransit.jpg'
+import GrassBridge from './Slides/GrassBridge.jpg'
 
 const Photography = () => {
   return (
@@ -42,6 +45,24 @@ const Photography = () => {
           <img src={AfterTheShow} alt='After the Show'/>
             <Carousel.Caption>
               <h5>After the Show</h5>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={WabbitSeason} alt='Wabbit Season'/>
+            <Carousel.Caption>
+              <h5>Wabbit Season</h5>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={LightTransit} alt='Light Transit'/>
+            <Carousel.Caption>
+              <h5>Light Transit</h5>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={GrassBridge} alt='Grass Bridge'/>
+            <Carousel.Caption>
+              <h5>Grass Bridge</h5>
             </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
