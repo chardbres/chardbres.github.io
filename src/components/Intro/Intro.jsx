@@ -78,25 +78,25 @@ const IntroCSS = css`
     height: 70vh;
     margin: 0 auto 4vh;
 
-    @media (max-width: 300px) {
-      margin: 0 auto 10vh;
-    }
-
-    @media (min-width: 1201px) {
-      margin: 0 auto 4vh;
-    }
-
     img {
       border: 8px solid #212529;
       height: 40vh;
       filter: grayscale(100%);
       margin-top: 15vh;
       width: auto;
+
+      @media (max-width: 500px) {
+        height: 30vh;
+      }
     }
 
     h1 {
       font-family: 'Montserrat';
       margin-top: 1rem;
+
+      @media (max-width: 501px) {
+        font-size: 200%;
+      }
     }
 
     p {
@@ -104,6 +104,10 @@ const IntroCSS = css`
       @media (min-width: 501px) {
         font-size: 200%;
       }
+    }
+
+    @media (max-width: 501px) {
+      height: 60vh;
     }
   }
 
@@ -144,10 +148,6 @@ const IntroCSS = css`
       left: 50%; top: 50%;
       margin: 0;
       transform: translate(-50%, -50%);
-    }
-
-    @media (max-width: 600px) {
-      width: 100%;
     }
 
     @media (min-width: 1050px) {

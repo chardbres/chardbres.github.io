@@ -35,9 +35,11 @@ const splash = css`
 
   img {
     width: 100vw;
+    
     @media (min-width: 501px) {
       width: 80%;
     };
+
     @media (min-width: 1201px) {
       height: 90%;
       width: auto;

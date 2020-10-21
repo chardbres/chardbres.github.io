@@ -53,6 +53,7 @@ const App = () => {
       behavior: 'smooth',
       block: 'start'
     })
+    setIsOpen(false)
   }
 
   return (
@@ -69,11 +70,11 @@ const App = () => {
             {matches.mobile &&
                 <div css={wrapper}>
                   <div css={headerCSS}>
-                    <h1>R|B</h1>
-                    <Burger direction='up' isOpen={isOpen} onClick={toggleOpen} style={{'font-size': '10px'}}/>
+                    <h1 onClick={() => scrollTo(topRef)}>R|B</h1>
+                    <Burger className='burger' direction='up' isOpen={isOpen} onClick={toggleOpen} style={{'font-size': '10px'}}/>
                   </div>
                   <div id={setOpenStatus(isOpen)} css={mobileCSS}>
-                    <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>Intro</p>
+                    <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>About Me</p>
                     <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
                     <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
                     <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
@@ -137,6 +138,17 @@ const headerCSS = css`
   width: 100vw;
   z-index: 10;
 
+  h1 {
+    align-items: center;
+    display: flex;
+    margin: 0 5vw;
+    vertical-align: middle;
+  }
+
+  .burger {
+    margin: 0 10vw;
+  }
+
   div {
     display: flex;
 
@@ -164,7 +176,6 @@ const headerCSS = css`
       align-items: center;
       display: flex;
       font-family: 'Montserrat';
-      float: right;
       line-height: 150%;
       margin: 0 1rem;
       padding: .5rem;

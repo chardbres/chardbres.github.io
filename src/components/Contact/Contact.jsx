@@ -76,7 +76,7 @@ const Contact = () => {
         </Container>
       </form>
       <div css={FooterCSS}>
-        <footer><small>&copy; Copyright 2020, Rick Bresnahan. All Rights Reserved.</small></footer>
+        <footer><p>&copy; Copyright 2020, Rick Bresnahan. All Rights Reserved.</p></footer>
         <a href='https://www.linkedin.com/in/rickbresnahan/' target='_blank' rel='noopener noreferrer'><img src={LinkedInWhite} alt='LinkedIn'/></a>
         <a href='https://github.com/chardbres' target='_blank' rel='noopener noreferrer'><img src={GitHubWhite} alt='GitHub'/></a>      </div>
     </div>
@@ -159,7 +159,11 @@ const FooterCSS = css`
     height: 1rem;
   }
 
-  small {
+  p {
     margin: 0 .5rem;
+
+    @media (max-width: 500px) {
+      font-size: 70%;
+    }
   }
 `
