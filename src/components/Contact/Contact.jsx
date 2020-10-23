@@ -109,6 +109,10 @@ const FormCSS = css`
     color: white;
     font-family: 'Montserrat';
     margin: 1rem auto 2rem;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   .formRow {
