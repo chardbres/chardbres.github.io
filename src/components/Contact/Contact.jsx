@@ -31,23 +31,6 @@ const Contact = () => {
     setFormState({ message: event.target.value })
   }
 
-  // const onSubmit = event => {
-  //   event.preventDefault()
-  //   fetch('https://usebasin.com/f/5604ad52d44e', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'text/html; charset=UTF-8'
-  //     },
-  //     body: formState
-  //   })
-  //   .then(function(response) {
-  //     console.log(response)
-  //   })
-  //   .catch(function(error) {
-  //     console.error(error)
-  //   })
-  // }
-
   return (
     <div id='Contact' css={ContactCSS}>
       <h1>Contact Me</h1>

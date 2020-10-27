@@ -20,6 +20,8 @@ import Contact from './components/Contact/Contact'
 
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [offset, setOffset] = useState(0)
   // Section refs
   const topRef = useRef()
   const introRef = useRef()
@@ -28,9 +30,30 @@ const App = () => {
   const writingRef = useRef()
   const contactRef = useRef()
 
-  const [isOpen, setIsOpen] = useState(false)
-
-  const [offset, setOffset] = useState(0)
+  // Section offset values for sticky scrolling
+  const offsets = {
+    mobile: {
+      intro: 1.00,
+      photo: 2.20,
+      project: 3.40,
+      writing: 4.60,
+      contact: 5.80
+    },
+    tablet: {
+      intro: 1.20,
+      photo: 2.40,
+      project: 3.60,
+      writing: 4.80,
+      contact: 6.00
+    },
+    large: {
+      intro: 2.10,
+      photo: 3.30,
+      project: 4.50,
+      writing: 5.70,
+      contact: 7.00
+    },
+  }
 
   useEffect(() => {
     document.title = `Rick Bresnahan`
@@ -48,10 +71,10 @@ const App = () => {
     return key === true ? 'open' : 'closed'
   }
 
-  const scrollTo = id => {
-    id.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+  const scrollTo = offset => {
+    window.scrollTo({
+      top: offset * window.innerHeight,
+      behavior: 'smooth'
     })
     setIsOpen(false)
   }
@@ -60,7 +83,8 @@ const App = () => {
     <div className="App">
       <Media queries={{
           mobile: "(max-width: 500px)",
-          large: "(min-width: 501px)"
+          tablet: "(min-width: 501px)",
+          large: "(min-width: 1025px)"
       }}>
 
         {matches => (
@@ -74,13 +98,29 @@ const App = () => {
                     <Burger className='burger' direction='up' isOpen={isOpen} onClick={toggleOpen} style={{'font-size': '10px'}}/>
                   </div>
                   <div id={setOpenStatus(isOpen)} css={mobileCSS}>
-                    <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>About Me</p>
-                    <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
-                    <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
-                    <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
-                    <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
+                    <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(offsets.mobile.intro)}>About Me</p>
+                    <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(offsets.mobile.photo)}>Photography</p>
+                    <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(offsets.mobile.project)}>Projects</p>
+                    <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.mobile.writing)}>Writing</p>
+                    <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.mobile.contact)}>Contact</p>
                   </div>
                 </div>
+            }
+
+            {/* Tablet View */}
+            {matches.tablet &&
+              <div css={headerCSS}>
+                <div>
+                  <h1 onClick={() => scrollTo(topRef)}>R|B</h1>
+                </div>
+                <div style={{'margin-right': '5vw'}}>
+                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(offsets.tablet.intro)}>About Me</p>
+                  <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(offsets.tablet.photo)}>Photography</p>
+                  <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(offsets.tablet.project)}>Projects</p>
+                  <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.tablet.writing)}>Writing</p>
+                  <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.tablet.contact)}>Contact</p>
+                </div>
+              </div>
             }
 
             {/* Tablet/Desktop View */}
@@ -90,11 +130,11 @@ const App = () => {
                   <h1 onClick={() => scrollTo(topRef)}>R|B</h1>
                 </div>
                 <div style={{'margin-right': '5vw'}}>
-                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(introRef)}>About Me</p>
-                  <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(photoRef)}>Photography</p>
-                  <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(projectRef)}>Projects</p>
-                  <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(writingRef)}>Writing</p>
-                  <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(contactRef)}>Contact</p>
+                  <p className={offset >= 1.00 && offset < 2.20 ? 'active' : ''} onClick={() => scrollTo(offsets.large.intro)}>About Me</p>
+                  <p className={offset >= 2.20 && offset < 3.40 ? 'active' : ''} onClick={() => scrollTo(offsets.large.photo)}>Photography</p>
+                  <p className={offset >= 3.40 && offset < 4.60 ? 'active' : ''} onClick={() => scrollTo(offsets.large.project)}>Projects</p>
+                  <p className={offset >= 4.60 && offset < 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.large.writing)}>Writing</p>
+                  <p className={offset >= 5.80 ? 'active' : ''} onClick={() => scrollTo(offsets.large.contact)}>Contact</p>
                 </div>
               </div>
             }
@@ -121,7 +161,7 @@ export default App;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const divCSS = css`
   position: -webkit-sticky;
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 2;
 `

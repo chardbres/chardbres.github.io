@@ -49,9 +49,6 @@ const SpacingDiv = css`
 const IntroCSS = css`
   background: #fff;
   height: 60vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   z-index: 2;
 
   @media (min-width: 501px) {

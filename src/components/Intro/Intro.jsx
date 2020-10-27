@@ -37,10 +37,6 @@ const Intro = ({visible}) => {
     [HerokuLogo, 'Heroku']
   ]
 
-  useEffect(() => {
-    console.log(visible === 'shown' ? 'Intro here!' : 'Intro hidden!')
-  },[visible])
-
   const Icons = props => {
     return <Col className='Bin'><img className='Icon' src={props.icon[0]} alt='icon' /><p>{props.icon[1]}</p></Col>
   }
