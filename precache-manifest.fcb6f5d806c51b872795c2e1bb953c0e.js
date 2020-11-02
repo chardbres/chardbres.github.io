@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "954367c57bc35d30e28931c2f65d24f2",
+    "revision": "22e7823432893e953c0449b4eba8d433",
     "url": "/index.html"
   },
   {
-    "revision": "efa67587493369a5d0ca",
+    "revision": "09303bc2ddc4cf9db354",
     "url": "/static/css/2.c1563c7a.chunk.css"
   },
   {
-    "revision": "d6d80417dea6cec2df90",
+    "revision": "813058e1228c570d5b32",
     "url": "/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "efa67587493369a5d0ca",
-    "url": "/static/js/2.438367c0.chunk.js"
+    "revision": "09303bc2ddc4cf9db354",
+    "url": "/static/js/2.e8a3df14.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/static/js/2.438367c0.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.e8a3df14.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6d80417dea6cec2df90",
-    "url": "/static/js/main.500a1e01.chunk.js"
+    "revision": "813058e1228c570d5b32",
+    "url": "/static/js/main.8d740008.chunk.js"
   },
   {
     "revision": "766df7dbb5392e1314ed",
@@ -40,6 +40,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Beached Lobster Pot.f3b0a0f4.jpg"
   },
   {
+    "revision": "a5ac0638c845935b3599b9f5522b0f47",
+    "url": "/static/media/ChickenOfTheWood.a5ac0638.jpg"
+  },
+  {
+    "revision": "40df20ee1aa5c0f0edafe6dc82357202",
+    "url": "/static/media/FeederFinch.40df20ee.jpg"
+  },
+  {
     "revision": "bbe4694e359ae2c70987315fc20fb212",
     "url": "/static/media/GhostStair.bbe4694e.jpg"
   },
@@ -50,10 +58,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8e6b2496928845f9036b82bd1c73a29d",
     "url": "/static/media/LightTransit.8e6b2496.jpg"
-  },
-  {
-    "revision": "f3b0a0f4013c9d95a931bb59f37b469a",
-    "url": "/static/media/LobsterPot.f3b0a0f4.jpg"
   },
   {
     "revision": "8b967e455b345d22c6c14402b5de039e",
