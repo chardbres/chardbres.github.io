@@ -8,11 +8,12 @@ import Arrow from './../../assets/img/Photography/arrow.svg'
 
 // Image Slides
 import GhostStair from './Slides/GhostStair.jpg'
-import LobsterPot from './Slides/LobsterPot.jpg'
 import AfterTheShow from './Slides/AfterTheShow.jpg'
 import WabbitSeason from './Slides/WabbitSeason.jpg'
 import LightTransit from './Slides/LightTransit.jpg'
 import GrassBridge from './Slides/GrassBridge.jpg'
+import FeederFinch from './Slides/FeederFinch.jpg'
+import ChickenOfTheWood from './Slides/ChickenOfTheWood.jpg'
 
 const Photography = () => {
   return (
@@ -26,12 +27,6 @@ const Photography = () => {
             <img src={GhostStair} alt='The Ghost Stair'/>
             <Carousel.Caption>
               <h5>The Ghost Stair</h5>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src={LobsterPot} alt='Beached Lobster Pot'/>
-            <Carousel.Caption>
-              <h5>Beached</h5>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -56,6 +51,18 @@ const Photography = () => {
             <img src={GrassBridge} alt='Grass Bridge'/>
               <Carousel.Caption>
                 <h5>Grass Bridge</h5>
+              </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={FeederFinch} alt='Feeder Finch'/>
+              <Carousel.Caption>
+                <h5>Feeder Finch</h5>
+              </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={ChickenOfTheWood} alt='Chicken of the Wood'/>
+              <Carousel.Caption>
+                <h5>Chicken of the Wood</h5>
               </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
